@@ -2,9 +2,9 @@ aot
 node_modules
 npm-debug.log
 **/*.ngfactory.*
-**/*.js
 **/*.js.map
-**/*.json
 index.js
 index.js.map
 **/*.metadata.json
+src/**/*.js
+integration-test/**/*.js

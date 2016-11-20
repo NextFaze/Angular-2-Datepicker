@@ -1,7 +1,10 @@
 aot
 app
 index.html
+integration-test
+karma-test-shim.js
 node_modules
 npm-debug.log
 systemjs.config.js
+travis.yml
 **/*.ngfactory.*

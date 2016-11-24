@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit, QueryList } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MdInput, MdHint } from '@angular/material';
 
 @Component({
   selector: 'my-app',
@@ -9,7 +10,7 @@ import { FormControl } from '@angular/forms';
         [formControl]="dateControl"
         dateFormat="YYYY-MM-DD"
         [rangeEnd]="testRangeDate"
-      ></material-datepicker>
+      ><md-hint>Md Hint</md-hint></material-datepicker>
 
       <button (click)="setToday()">today</button>
       <button (click)="clearDate()">reset</button>
@@ -31,7 +32,6 @@ export class AppComponent {
   dateControl = new FormControl(this.date);
   disabled: boolean;
   @Input() testRangeDate: Date;
-
   constructor() {
     this.testRangeDate = new Date();
   }

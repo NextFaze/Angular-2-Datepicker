@@ -1,9 +1,10 @@
 import {
   animate, Component, ElementRef, EventEmitter, Input, keyframes, OnChanges,
   OnInit, Output, Renderer, SimpleChange, state, style, transition, trigger,
-  forwardRef, HostListener
+  forwardRef
 } from '@angular/core';
 import { FormControl, Validators, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+
 export const DATETIME_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => DatepickerComponent),
@@ -220,7 +221,13 @@ interface ValidationResult {
         (click)="onInputClick()"
         [(ngModel)]="inputText"
         readonly="true"
-      ></md-input>
+      >
+      <ng-content select="md-hint" ngProjectAs="md-hint">
+      </ng-content>
+      <ng-content select="md-placeholder" ngProjectAs="md-placeholder"></ng-content>
+      <ng-content select="[md-prefix]" ngProjectAs="md-prefix"></ng-content>
+      <ng-content select="[md-suffix]" ngProjectAs="md-suffix"></ng-content>
+      </md-input>
       <div
         class="datepicker__calendar"
         *ngIf="showCalendar"
@@ -344,6 +351,8 @@ export class DatepickerComponent implements OnInit, OnChanges {
   @Input() currentMonth: string;
   @Input() dayNames: Array<String>;
   @Input() hoveredDay: Date;
+
+
   calendar: Calendar;
   currentMonthNumber: number;
   currentYear: number;
@@ -418,6 +427,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
   }
   registerOnTouched(fn: any) { this.onTouched = fn; }
   onTouched() { }
+
   //----------------------------------------------------------------------------------//
   //-------------------------------- State Management --------------------------------//
   //----------------------------------------------------------------------------------//

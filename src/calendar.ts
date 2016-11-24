@@ -26,7 +26,7 @@ export class Calendar {
         return startDate;
     }
 
-    monthDates(year: any, month: any, dayFormatter:any = null, weekFormatter:any = null) {
+    monthDates(year: any, month: any, dayFormatter: any = null, weekFormatter: any = null) {
         if ((typeof year !== "number") || (year < 1970)) {
             throw ('year must be a number >= 1970');
         };
@@ -38,14 +38,14 @@ export class Calendar {
             i = 0,
             date = this.weekStartDate(new Date(year, month, 1));
         do {
-            for (i=0; i<7; i++) {
+            for (i = 0; i < 7; i++) {
                 week.push(dayFormatter ? dayFormatter(date) : date);
                 date = new Date(date.getTime());
                 date.setDate(date.getDate() + 1);
             }
             weeks.push(weekFormatter ? weekFormatter(week) : week);
             week = [];
-        } while ((date.getMonth()<=month) && (date.getFullYear()===year));
+        } while ((date.getMonth() <= month) && (date.getFullYear() === year));
         return weeks;
     }
 
@@ -64,7 +64,7 @@ export class Calendar {
         };
         var getDayOrBlank = function getDayOrBlank(date: any) {
             var s = date.getMonth() === month ? date.getDate().toString() : "  ";
-            while (s.length < 2) s = " "+s;
+            while (s.length < 2) s = " " + s;
             return s;
         };
         var weeks = this.monthDates(year, month, getDayOrBlank,
@@ -73,7 +73,7 @@ export class Calendar {
     }
 }
 
-const months = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
-for (var i=0; i<months.length; i++) {
+const months: string[] = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
+for (var i = 0; i < months.length; i++) {
     Calendar[months[i]] = i;
 }

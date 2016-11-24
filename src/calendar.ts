@@ -73,7 +73,7 @@ export class Calendar {
     }
 }
 
-const months: string[] = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
+const months: { [index: number]: string, length: number } = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
 for (var i = 0; i < months.length; i++) {
     Calendar[months[i]] = i;
 }

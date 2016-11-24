@@ -333,6 +333,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
     let date = val instanceof Date ? val : !val ? val : new Date(val);
     this.dateVal = date;
     this.dateChange.emit(date);
+    this.syncVisualsWithDate();
   }
   // api bindings
   @Input() disabled: boolean;

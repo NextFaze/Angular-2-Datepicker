@@ -330,8 +330,9 @@ export class DatepickerComponent implements OnInit, OnChanges {
   @Output() dateChange = new EventEmitter<Date>();
 
   writeValue(val: any) {
-    this.dateVal = val;
-    this.dateChange.emit(val);
+    let date = val instanceof Date ? val : !val ? val : new Date(val);
+    this.dateVal = date;
+    this.dateChange.emit(date);
   }
   // api bindings
   @Input() disabled: boolean;

@@ -32,6 +32,10 @@
     "zone.js": "^0.6.25",
     "@angular/material": "^2.0.0-alpha.10"
   },
+  "peerDependencies": {
+    "@angular/material": "^2.0.0-alpha.10",
+    "rxjs": "latest"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/koleary94/Angular-2-Datepicker"
@@ -43,10 +47,6 @@
     "tsc:w": "tsc -w",
     "ngc": "node_modules/.bin/ngc -p tsconfig-aot.json && rm integration-test/*.metadata.json",
     "postinstall": "tsc"
-  },
-  "dependencies": {
-    "@angular/material": "^2.0.0-alpha.10",
-    "rxjs": "latest"
   },
   "typings": "index.d.ts"
 }

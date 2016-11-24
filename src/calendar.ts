@@ -11,7 +11,20 @@
 //    };
 // }
 
+
 export class Calendar {
+    static JAN = 'JAN'
+    static FEB = 'FEB'
+    static MAR = 'MAR'
+    static APR = 'APR'
+    static MAY = 'MAY'
+    static JUN = 'JUN'
+    static JUL = 'JUL'
+    static AUG = 'AUG'
+    static SEP = 'SEP'
+    static OCT = 'OCT'
+    static NOV = 'NOV'
+    static DEC = 'DEC'
     firstWeekDay: number;
 
     constructor(firstWeekDay = 0) {
@@ -71,9 +84,4 @@ export class Calendar {
             function (week: any) { return week.join(" ") });
         return weeks.join("\n");
     }
-}
-
-const months: { [index: number]: string, length: number } = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(" ");
-for (var i = 0; i < months.length; i++) {
-    Calendar[months[i]] = i;
 }

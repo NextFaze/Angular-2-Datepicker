@@ -247,14 +247,14 @@ interface ValidationResult {
           </div>
           <div class="datepicker__calendar__nav__header">
             <span>{{ currentMonth }}</span>
-            <input
+            <md-input
               #yearInput
               class="datepicker__calendar__nav__header__year"
               placeholder="Year"
               [formControl]="yearControl"
               (keyup.enter)="yearInput.blur()"
               (blur)="onYearSubmit()"
-            />
+            ></md-input>
           </div>
           <div
             class="datepicker__calendar__nav__arrow"

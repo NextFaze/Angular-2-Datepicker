@@ -332,7 +332,6 @@ export class DatepickerComponent implements OnInit, OnChanges {
   writeValue(val: any) {
     let date = val instanceof Date ? val : !val ? val : new Date(val);
     this.dateVal = date;
-    this.dateChange.emit(date);
     this.syncVisualsWithDate();
   }
   // api bindings

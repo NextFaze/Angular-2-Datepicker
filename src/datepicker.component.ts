@@ -42,13 +42,17 @@ interface ValidationResult {
     ])
   ],
   styles: [
-    `.datepicker {
-        position: relative;
-        display: inline-block;
+    `
+    :host {
+      display: inline-block;
+      position: relative;
         color: #2b2b2b;
         font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Calibri', 'Roboto';
-      }
-
+    }
+    md-input {
+      display: inline-block;
+      width: 100%;
+    }
       .datepicker__calendar {
         position: absolute;
         overflow: hidden;
@@ -215,9 +219,7 @@ interface ValidationResult {
     >
       <md-input
         [disabled]="disabled"
-        
         [placeholder]="placeholder"
-        
         (click)="onInputClick()"
         [(ngModel)]="inputText"
         readonly="true"

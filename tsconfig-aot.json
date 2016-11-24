@@ -9,16 +9,17 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "types": [ "es6-shim" ]
+    "types": [
+      "es6-shim"
+    ],
+    "declarations": true
   },
-
   "files": [
     "integration-test/app.module.ts",
     "integration-test/main.ts"
   ],
-
   "angularCompilerOptions": {
-   "genDir": "aot",
-   "skipMetadataEmit" : false
- }
+    "genDir": "aot",
+    "skipMetadataEmit": false
+  }
 }

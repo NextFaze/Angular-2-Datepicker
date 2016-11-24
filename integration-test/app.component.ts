@@ -4,6 +4,13 @@ import { MdInput, MdHint } from '@angular/material';
 
 @Component({
   selector: 'my-app',
+  styles: [
+    `
+    material-datepicker {
+      width: 100%;
+    }
+    `
+  ],
   template: `
       <material-datepicker
         (onSelect)="onSelect($event)"

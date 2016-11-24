@@ -12,7 +12,7 @@ export const DATETIME_VALUE_ACCESSOR: any = {
 };
 import { Calendar } from './calendar';
 
-interface DateFormatFunction {
+export interface DateFormatFunction {
   (date: Date): string;
 }
 

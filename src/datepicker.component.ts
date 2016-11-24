@@ -212,17 +212,15 @@ interface ValidationResult {
       class="datepicker"
       [ngStyle]="{'font-family': fontFamily}"
     >
-      <input
+      <md-input
         [disabled]="disabled"
-        class="datepicker__input"
+        
         [placeholder]="placeholder"
-        [ngStyle]="{'color': altInputStyle ? colors['white'] : colors['black'],
-                    'background-color': altInputStyle ? accentColor : colors['white'],
-                    'border': altInputStyle ? '' : '1px solid #dadada'}"
+        
         (click)="onInputClick()"
         [(ngModel)]="inputText"
         readonly="true"
-      >
+      ></md-input>
       <div
         class="datepicker__calendar"
         *ngIf="showCalendar"
@@ -247,14 +245,14 @@ interface ValidationResult {
           </div>
           <div class="datepicker__calendar__nav__header">
             <span>{{ currentMonth }}</span>
-            <md-input
+            <input
               #yearInput
               class="datepicker__calendar__nav__header__year"
               placeholder="Year"
               [formControl]="yearControl"
               (keyup.enter)="yearInput.blur()"
               (blur)="onYearSubmit()"
-            ></md-input>
+            >
           </div>
           <div
             class="datepicker__calendar__nav__arrow"

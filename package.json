@@ -45,8 +45,7 @@
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "ngc": "node_modules/.bin/ngc -p tsconfig-aot.json && rm integration-test/*.metadata.json",
-    "postinstall": "tsc"
+    "ngc": "node_modules/.bin/ngc -p tsconfig-aot.json && rm integration-test/*.metadata.json"
   },
   "typings": "index.d.ts"
 }

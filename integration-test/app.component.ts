@@ -1,16 +1,14 @@
-import { Component, Input, ViewChild, AfterViewInit, QueryList } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MdInput, MdHint } from '@angular/material';
+import {AfterViewInit, Component, Input, QueryList, ViewChild} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {MdHint} from '@angular/material';
 
 @Component({
   selector: 'my-app',
-  styles: [
-    `
+  styles: [`
     material-datepicker {
       width: 100%;
     }
-    `
-  ],
+    `],
   template: `
       <material-datepicker
         (onSelect)="onSelect($event)"
@@ -48,7 +46,7 @@ export class AppComponent {
   }
 
   onSelect(date: Date) {
-    console.log("onSelect: ", date);
+    console.log('onSelect: ', date);
   }
   clearDate() {
     this.dateControl.reset();

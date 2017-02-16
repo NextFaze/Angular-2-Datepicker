@@ -1,4 +1,3 @@
-/// <reference types="es6-shim" />
 import { ElementRef, EventEmitter, OnChanges, OnInit, Renderer, SimpleChange } from '@angular/core';
 import { FormControl } from '@angular/forms';
 export declare const DATETIME_VALUE_ACCESSOR: any;

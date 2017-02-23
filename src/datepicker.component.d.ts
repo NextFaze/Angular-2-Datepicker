@@ -1,3 +1,4 @@
+/// <reference types="es6-shim" />
 import { ElementRef, EventEmitter, OnChanges, OnInit, Renderer, SimpleChange } from '@angular/core';
 import { FormControl } from '@angular/forms';
 export declare const DATETIME_VALUE_ACCESSOR: any;
@@ -11,6 +12,8 @@ export declare class DatepickerComponent implements OnInit, OnChanges {
     private dateVal;
     dateChange: EventEmitter<Date>;
     writeValue(val: any): void;
+    _readonly: boolean;
+    readonly: boolean;
     disabled: boolean;
     accentColor: string;
     altInputStyle: boolean;
